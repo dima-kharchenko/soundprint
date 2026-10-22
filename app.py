@@ -14,7 +14,7 @@ from functions import get_paths, process_song, get_matches, best_matches, get_sp
 
 CLIP_SECONDS = 10 
 MIN_SECONDS = 3
-MIN_SCORE = 15
+MIN_SCORE = 10
 MIN_RATIO = 2.0
 
 def title_of(name):
@@ -128,6 +128,12 @@ def main():
     st.set_page_config(page_title="Soundprint", layout="centered")
     st.title("Soundprint")
     st.caption("Local music recognition using audio fingerprints")
+
+    st.link_button("Open the demo playlist on Spotify", "https://open.spotify.com/playlist/7dKXIIhMrMwOjUMiXPzypP?si=97692924d4404d9a")
+    st.markdown(
+        "Play any track from the playlist on another device (phone or speaker), "
+        "then press **Record** below and hold the microphone near the sound for 5-10 seconds."
+    )
 
     cfg = sidebar()
     if cfg['n_songs'] == 0:
