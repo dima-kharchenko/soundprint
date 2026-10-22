@@ -108,26 +108,6 @@ def index_with_progress(conn, paths, bar):
 
 def sidebar():
     stats_box = st.sidebar.container()
-    st.sidebar.divider()
-    folder = st.sidebar.text_input("Music folder", "./music")
-
-    if st.sidebar.button("Index folder", use_container_width=True):
-        paths = get_paths(folder)
-        if not paths:
-            st.sidebar.error(f"No audio files found in: {folder}")
-        else:
-            conn = create_db()
-            bar = st.sidebar.progress(0.0, text="Preparing...")
-            try:
-                before = library_stats(conn)[0]
-                index_with_progress(conn, paths, bar)
-                added = library_stats(conn)[0] - before
-                st.sidebar.success(f"Added {added} new songs ({len(paths)} files found)")
-            except Exception as exc:
-                st.sidebar.exception(exc)
-            finally:
-                bar.empty()
-                conn.close()
 
     with st.sidebar.expander("Recognition settings"):
         clip = st.slider("Analyze first N seconds", 3, 20, CLIP_SECONDS)
