@@ -5,6 +5,8 @@ Audio fingerprinting engine in Python. It identifies a song from a short, noisy 
 **Built with:** Python, NumPy, SciPy, librosa, SQLite, Streamlit.
 
 ![Soundprint demo](docs/demo.gif)
+
+**Live demo:** [Streamlit App](https://soundprint-vhkn85f8qwhzzxscxsxh73.streamlit.app/). To try it, play a track from the [demo playlist](https://open.spotify.com/playlist/7dKXIIhMrMwOjUMiXPzypP?si=29bae54ba3534a4e) and record it in the app.
  
 ## Features
  
